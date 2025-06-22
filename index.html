@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Solar System Tour</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="page">
+
+  <!-- Экран 1 -->
+  <section class="intro">
+    <div class="intro__stars"></div>
+    <h1 class="intro__title">Путешествие по Солнечной системе</h1>
+    <p class="intro__subtitle">Нажмите и прокрутите вниз, чтобы отправиться в космос</p>
+  </section>
+
+  <!-- Экран 2 -->
+  <section class="planets">
+    <h2 class="planets__header">Наши планеты</h2>
+    <div class="planets__list">
+      <div class="planets__item planet" data-planet="mercury">
+        <div class="planet__front">Меркурий</div>
+        <div class="planet__back">Маленькая и быстрая планета</div>
+      </div>
+      <div class="planets__item planet" data-planet="venus">
+        <div class="planet__front">Венера</div>
+        <div class="planet__back">Жаркая и облачная</div>
+      </div>
+      <!-- добавьте остальные планеты аналогично -->
+    </div>
+  </section>
+
+  <!-- Экран 3 -->
+  <section class="mission">
+    <h2 class="mission__title">Станьте астронавтом</h2>
+    <form class="mission__form">
+      <label class="mission__label">
+        Имя <input class="mission__input" type="text" name="name" required>
+      </label>
+      <label class="mission__label">
+        Электронная почта
+        <input class="mission__input" type="email" name="email" required>
+      </label>
+      <button class="mission__button" type="submit">Отправить заявку</button>
+    </form>
+    <canvas class="mission__canvas"></canvas>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

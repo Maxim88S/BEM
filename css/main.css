@@ -1,0 +1,58 @@
+/* Общие сбросы */
+* { margin:0; padding:0; box-sizing:border-box; }
+body.page { font-family: sans-serif; overflow-x:hidden; }
+
+/* Экран 1: intro */
+.intro {
+  position:relative; height:100vh; text-align:center; color:#fff;
+  background:linear-gradient(to bottom, #000011, #000033);
+  overflow:hidden;
+}
+.intro__stars {
+  position:absolute; top:0; left:0; width:200%; height:200%;
+  background:url('../img/stars.png') repeat; animation:moveStars 60s linear infinite;
+}
+.intro__title { position:relative; margin-top:40vh; font-size:3rem; }
+.intro__subtitle { position:relative; margin-top:1rem; }
+
+/* Экран 2: planets */
+.planets { padding:50px 20px; background:#f0f0f5; text-align:center; }
+.planets__header { font-size:2rem; margin-bottom:30px; }
+.planets__list { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+.planets__item {
+  width:150px; height:200px; perspective:600px;
+}
+.planet__front, .planet__back {
+  position:absolute; width:100%; height:100%; backface-visibility:hidden;
+  border-radius:10px; display:flex; align-items:center; justify-content:center;
+  font-weight:bold; font-size:1.1rem; transition:transform .6s;
+}
+.planet__front { background:#ffd700; }
+.planet__back {
+  background:#ffeb99; transform:rotateY(180deg); padding:10px;
+}
+.planets__item:hover .planet__front { transform:rotateY(-180deg); }
+.planets__item:hover .planet__back  { transform:rotateY(0); }
+
+/* Экран 3: mission */
+.mission { position:relative; padding:60px 20px; background:#001f3f; color:#fff; text-align:center; }
+.mission__title { font-size:2rem; margin-bottom:20px; }
+.mission__form { display:inline-block; text-align:left; }
+.mission__label { display:block; margin-bottom:10px; }
+.mission__input {
+  width:250px; padding:8px; border:1px solid #ccc; border-radius:4px;
+}
+.mission__button {
+  display:block; margin:20px auto; padding:10px 20px; background:#0074d9; border:none;
+  color:#fff; border-radius:4px; cursor:pointer; transition:background .3s;
+}
+.mission__button:hover { background:#0053a0; }
+.mission__canvas {
+  position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;
+}
+
+/* Анимация звезд */
+@keyframes moveStars {
+  from { transform:translate(0,0); }
+  to   { transform:translate(-50%, -50%); }
+}

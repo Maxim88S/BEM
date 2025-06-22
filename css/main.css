@@ -1,75 +1,154 @@
 /* main.css */
-* { margin:0; padding:0; box-sizing:border-box; }
-body.page { font-family: sans-serif; overflow-x:hidden; }
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+body.page {
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
 
 /* Intro */
 .intro {
-  position:relative; height:100vh; text-align:center; color:#fff;
-  background:linear-gradient(to bottom, #000011, #000033);
-  overflow:hidden;
+  position: relative;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to bottom, #000011, #000033);
+  overflow: hidden;
 }
 .intro__stars {
-  position:absolute; top:0; left:0; width:200%; height:200%;
-  background:url('../img/stars.png') repeat; animation:moveStars 60s linear infinite;
+  position: absolute;
+  top: 0; left: 0;
+  width: 200%; height: 200%;
+  background: url('../img/stars.png') repeat;
+  animation: moveStars 60s linear infinite;
 }
-.intro__title { position:relative; margin-top:40vh; font-size:3rem; }
-.intro__subtitle { position:relative; margin-top:1rem; }
+.intro__title {
+  position: relative;
+  margin-top: 40vh;
+  font-size: 3rem;
+}
+.intro__subtitle {
+  position: relative;
+  margin-top: 1rem;
+}
 
 /* Planets */
-.planets { padding:50px 20px; background:#f0f0f5; text-align:center; }
-.planets__header { font-size:2rem; margin-bottom:30px; }
-.planets__list { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+.planets {
+  padding: 50px 20px;
+  background: #f0f0f5;
+  text-align: center;
+}
+.planets__header {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+.planets__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
 .planets__item {
-  width:180px; height:240px; perspective:600px; position:relative;
+  width: 220px;
+  text-align: center;
 }
-.planet__front, .planet__back {
-  position:absolute; width:100%; height:100%; backface-visibility:hidden;
-  border-radius:10px; display:flex; flex-direction:column;
-  align-items:center; justify-content:center;
-  font-weight:bold; transition:transform .6s;
-  box-shadow:0 2px 8px rgba(0,0,0,0.2);
+.planet__image {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-.planet__image { width:80%; border-radius:50%; margin-bottom:10px; }
-.planet__name { font-size:1.2rem; color:#333; }
-.planet__front { background:#fff; }
-.planet__back {
-  background:#fff; padding:10px; transform:rotateY(180deg);
-  overflow:auto; font-size:0.9rem; text-align:left;
+.planet__name {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #333;
 }
-.planets__item:hover .planet__front { transform:rotateY(-180deg); }
-.planets__item:hover .planet__back  { transform:rotateY(0); }
+.planet__description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: justify;
+  margin-top: 8px;
+  max-height: 300px;
+  overflow: auto;
+}
 
 /* Mission */
-.mission { position:relative; padding:60px 20px; background:#001f3f; color:#fff; text-align:center; }
-.mission__title { font-size:2rem; margin-bottom:20px; }
-.mission__form { display:inline-block; text-align:left; z-index:1; position:relative; }
-.mission__label { display:block; margin-bottom:10px; }
+.mission {
+  position: relative;
+  padding: 60px 20px;
+  background: #001f3f;
+  color: #fff;
+  text-align: center;
+}
+.mission__title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.mission__form {
+  display: inline-block;
+  text-align: left;
+  z-index: 1;
+  position: relative;
+}
+.mission__label {
+  display: block;
+  margin-bottom: 10px;
+}
 .mission__input {
-  width:250px; padding:8px; border:1px solid #ccc; border-radius:4px;
+  width: 250px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 .mission__button {
-  display:block; margin:20px auto; padding:10px 20px; background:#0074d9; border:none;
-  color:#fff; border-radius:4px; cursor:pointer; transition:background .3s;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background: #0074d9;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .3s;
 }
-.mission__button:hover { background:#0053a0; }
+.mission__button:hover {
+  background: #0053a0;
+}
 .mission__canvas {
-  position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Game */
 .game {
-  position:relative; margin-top:40px; width:100%; height:400px; background:#000;
-  overflow:hidden; border:2px solid #fff; border-radius:8px;
+  position: relative;
+  margin-top: 40px;
+  width: 100%;
+  height: 400px;
+  background: #000;
+  overflow: hidden;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  z-index: 2;
 }
 .game__canvas {
-  position:absolute; top:0; left:0; width:100%; height:100%;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
 }
 .game__score {
-  position:absolute; top:10px; left:10px; color:#0f0; font-size:1.2rem; z-index:1;
+  position: absolute;
+  top: 10px; left: 10px;
+  color: #0f0;
+  font-size: 1.2rem;
+  z-index: 3;
 }
 
 /* Keyframes */
 @keyframes moveStars {
-  from { transform:translate(0,0); }
-  to   { transform:translate(-50%, -50%); }
+  from { transform: translate(0,0); }
+  to   { transform: translate(-50%, -50%); }
 }
